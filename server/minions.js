@@ -39,3 +39,8 @@ minionsRouter.post('/', (req, res, next) => {
   const newMinion = addToDatabase('minions', req.body);
   res.status(201).send(newMinion);
 });
+
+minionsRouter.delete('/:minionId', (req, res, next) => {
+  const removedMinion = deleteFromDatabasebyId('minions', req.params.minionId);
+  res.status(204).send();
+});
