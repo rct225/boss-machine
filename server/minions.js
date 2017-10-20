@@ -29,3 +29,14 @@ minionsRouter.get('/', (req, res, next) => {
 minionsRouter.get('/:minionId', (req, res, next) => {
   res.send(req.minion);
 });
+
+
+// app.put('/spices/:spiceId', (req, res, next) => {
+//   spiceRack[req.spiceIndex] = req.body.spice;
+//   res.send(spiceRack[req.spiceIndex]);
+// });
+
+minionsRouter.put('/:minionId', (req, res, next) => {
+  let updatedMinion = updateInstanceInDatabase('minions', req.body);
+  res.send(updatedMinion);
+})
