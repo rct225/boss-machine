@@ -24,13 +24,11 @@ app.use('/api', apiRouter);
 // This conditional is here for testing purposes:
 if (!module.parent) {
   // Add your code to start the server listening at PORT below:
-  const server = http.createServer(requestHandler);
-
-  server.listen(port, (err) => {
+  app.listen(PORT, (err) => {
     if (err) {
       return console.log('Server did not start succesfully: ', err);
     }
 
-    console.log(`Server is listening on ${port}`);
+    console.log(`Server is listening on ${PORT}`);
   });
 }
